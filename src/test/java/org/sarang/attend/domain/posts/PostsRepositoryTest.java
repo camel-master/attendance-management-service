@@ -50,16 +50,16 @@ public class PostsRepositoryTest {
         //given
         LocalDateTime now = LocalDateTime.of(2019, 6, 4, 0, 0, 0);
         postsRepository.save(Posts.builder()
-                .title("title")
-                .content("content")
-                .author("author")
+                .title("Conquest of paradise")
+                .content("Now writing...")
+                .author("Dave Kim")
                 .build());
         //when
         List<Posts> postsList = postsRepository.findAll();
 
         //then
         Posts posts = postsList.get(0);
-
+        System.out.println("Title: " + posts.getTitle());
         System.out.println(">>>>>>>>> createDate=" + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
 
         assertThat(posts.getCreatedDate()).isAfter(now);
