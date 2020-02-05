@@ -1,9 +1,12 @@
 package org.sarang.attend.web.dto;
 import org.junit.Test;
+import org.springframework.security.test.context.support.WithMockUser;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class HelloResponseDtoTest {
     @Test
+    @WithMockUser(roles="USER")
     public void lombok_function_test() {
         //given
         String name = "test";
