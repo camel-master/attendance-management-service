@@ -2,6 +2,7 @@ package org.sarang.attend.web;
 
 import lombok.RequiredArgsConstructor;
 import org.sarang.attend.domain.user.User;
+import org.sarang.attend.config.auth.LoginUser;
 import org.sarang.attend.config.auth.dto.SessionUser;
 import org.sarang.attend.service.posts.PostsService;
 import org.sarang.attend.web.dto.PostsResponseDto;
@@ -18,12 +19,12 @@ import javax.validation.constraintvalidation.SupportedValidationTarget;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
+    //private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        //SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
