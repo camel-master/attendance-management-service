@@ -5,7 +5,6 @@ import org.sarang.attend.config.auth.dto.OAuthAttributes;
 import org.sarang.attend.config.auth.dto.SessionUser;
 import org.sarang.attend.domain.user.UserRepository;
 import org.sarang.attend.domain.user.User;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
 
-@EnableWebSecurity
 @RequiredArgsConstructor
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User>{
