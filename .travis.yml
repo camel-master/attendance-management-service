@@ -44,19 +44,6 @@ deploy:
     region: ap-northeast-2
     wait-until-deployed: true
 
-#  - provider: codedeploy
-#    access_key_id: $AWS_ACCESS_KEY
-#    secret_access_key: $AWS_SECRET_KEY
-#    bucket: attendance-management-build
-#    key: attendance-management-service.zip  #Transfer the build file after compressing
-#    bundle_type: zip
-#    application: attendance-management-service  #The application that was registered  in AWS web console.
-#    deployment_group: attendance-management-service-group #The CodeDeploy's deployment group that was registered int AWS web console
-#    region: ap-northeast-2
-#    wait-until-deployed: true
-
-
-
 # Notify with email at Complete running
 notifications:
   email:
