@@ -17,6 +17,22 @@ cache:
 
 script: "./gradlew clean build"
 
+before_deploy:
+  - zip -r attendance-management-service *  #Project name (file name)
+  - mkdir -p deploy
+  - mv attendance-management-service.zip deploy/attendance-management-service.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY      #The value that was set on Travis repository
+    secret_access_key: $AWS_SECRET_KEY  #The value that was set on Travis repository
+    bucket: attendance-management-build #AWS S3's bucket name
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private                        #Make access license about Zip file to private
+    local_dir: deploy                   #The directory that was created in before_deploy
+    wait-until-deployed: true
+
 # Notify with email at Complete running
 notifications:
   email:
