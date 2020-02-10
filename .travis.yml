@@ -39,10 +39,10 @@ deploy:
     bucket: attendance-management-build
     key: attendance-management-service.zip  #Transfer the build file after compressing
     bundle_type: zip
-#    application: attendance-management-service  #The application that was registered  in AWS web console.
-#    deployment_group: attendance-management-service-group #The CodeDeploy's deployment group that was registered int AWS web console
-#    region: ap-northeast-2
-#    wait-until-deployed: true
+    application: attendance-management-service  #The application that was registered  in AWS web console.
+    deployment_group: attendance-management-service-group #The CodeDeploy's deployment group that was registered int AWS web console
+    region: ap-northeast-2
+    wait-until-deployed: true
 
 
 
