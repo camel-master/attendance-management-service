@@ -32,6 +32,7 @@ deploy:
     acl: private                        #Make access license about Zip file to private
     local_dir: deploy                   #The directory that was created in before_deploy
     wait-until-deployed: true
+    
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
