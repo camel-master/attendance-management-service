@@ -33,12 +33,12 @@ deploy:
     local_dir: deploy                   #The directory that was created in before_deploy
     wait-until-deployed: true
 
-#  - provider: codedeploy
-#    access_key_id: $AWS_ACCESS_KEY
-#    secret_access_key: $AWS_SECRET_KEY
-#    bucket: attendance-management-build
-#    key: attendance-management-service.zip  #Transfer the build file after compressing
-#    bundle_type: zip
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: attendance-management-build
+    key: attendance-management-service.zip  #Transfer the build file after compressing
+    bundle_type: zip
 #    application: attendance-management-service  #The application that was registered  in AWS web console.
 #    deployment_group: attendance-management-service-group #The CodeDeploy's deployment group that was registered int AWS web console
 #    region: ap-northeast-2
