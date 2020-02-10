@@ -34,15 +34,26 @@ deploy:
     wait-until-deployed: true
 
   - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: attendance-management-build
-    key: attendance-management-service.zip  #Transfer the build file after compressing
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: attendance-management-build # S3 버킷
+    key: attendance-management-service.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
-    application: attendance-management-service  #The application that was registered  in AWS web console.
-    deployment_group: attendance-management-service-group #The CodeDeploy's deployment group that was registered int AWS web console
+    application: attendance-management-service # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: attendance-management-service-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
+
+#  - provider: codedeploy
+#    access_key_id: $AWS_ACCESS_KEY
+#    secret_access_key: $AWS_SECRET_KEY
+#    bucket: attendance-management-build
+#    key: attendance-management-service.zip  #Transfer the build file after compressing
+#    bundle_type: zip
+#    application: attendance-management-service  #The application that was registered  in AWS web console.
+#    deployment_group: attendance-management-service-group #The CodeDeploy's deployment group that was registered int AWS web console
+#    region: ap-northeast-2
+#    wait-until-deployed: true
 
 
 
