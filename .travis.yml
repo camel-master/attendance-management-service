@@ -44,7 +44,7 @@ deploy:
     region: ap-northeast-2
     wait-until-deployed: ture
 
-# Notify with email at Complete running TEST
+# Notify with email at Complete running
 notifications:
   email:
     recipients:
