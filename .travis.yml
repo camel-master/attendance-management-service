@@ -43,7 +43,7 @@ deploy:
     deployment_group: attendance-management-service-group
     wait-until-deployed: ture
 
-# Notify with email at Complete running
+# Notify with email at Complete running test
 notifications:
   email:
     recipients:
