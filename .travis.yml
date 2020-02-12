@@ -42,7 +42,7 @@ deploy:
     application: attendance-management-service
     deployment_group: attendance-management-service-group
     region: ap-northeast-2
-    wait-until-deployed: ture
+    wait-until-deployed: true
 
 # Notify with email at Complete running TEST
 notifications:
