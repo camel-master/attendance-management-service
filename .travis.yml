@@ -18,6 +18,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
+  - mkdir -p before-deploy  #Create a directory for saving files to contain in the zip file
   - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
   - cp build/libs/*.jar before-deploy/
