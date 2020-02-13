@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source:  /
-    destination: /home/ec2-user/app/step2/zip/
+    destination: /home/ec2-user/app/step3/zip/
     overwrite: yes
 
 permissions:
@@ -12,7 +12,15 @@ permissions:
     group: ec2-user
 
 hooks:
+  AfterInstall:
+    - location: stop.sh   #Shut down the spring boot that is not connected with nginx
+      timeout: 60
+      runas: ec2-user
   ApplicationStart:
-    - location: deploy.sh
+    - location: start.sh  #Start the new version of spring boot with port that is not connected with nginx
+      timeout: 60
+      runas: ec2-user
+  ValidateService:
+    - location: health.sh #Confirm execution of a new version of spring boot correctly
       timeout: 60
       runas: ec2-user
