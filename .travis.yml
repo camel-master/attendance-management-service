@@ -18,13 +18,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - mkdir -p before-deploy  #Create a directory for saving files to contain in the zip file
-  - cp scripts/*.sh before-deploy/
-  - cp appspec.yml before-deploy/
-  - cp build/libs/*.jar before-deploy/
-  - cd before-deploy && zip -r before-deploy * #Compress the all files after copy to before-deploy directory
-  - cd ../ && mkdir -p deploy #Create deploy directory after move to upper directory
-  - mv before-deploy/before-deploy.zip deploy/attendance-management-service.zip #Move the Zip file to deploy directory
+  - zip -r attendance-management-service *  #Project name (file name)
+  - mkdir -p deploy
+  - mv attendance-management-service.zip deploy/attendance-management-service.zip
 
 deploy:
   - provider: s3
