@@ -28,13 +28,11 @@
             </thead>
             <tbody id="tbody">
             {{#posts}}
-                <tr>
-                    <a href="/posts/update/{{id}}">
+                <tr onclick="location.href='/posts/update/{{id}}'">
                     <td>{{id}}</td>
                     <td>{{title}}</td>
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
-                    </a>
                 </tr>
             {{/posts}}
             </tbody>
