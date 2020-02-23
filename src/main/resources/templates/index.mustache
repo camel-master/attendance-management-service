@@ -28,11 +28,13 @@
             </thead>
             <tbody id="tbody">
             {{#posts}}
-                <tr id="row">
+                <tr>
+                    <a href="/posts/update/{{id}}">
                     <td>{{id}}</td>
                     <td>{{title}}</td>
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
+                    </a>
                 </tr>
             {{/posts}}
             </tbody>
