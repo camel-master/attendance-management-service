@@ -17,7 +17,7 @@ var main = {
             //alert('/posts/update/'+$('#row td').first().text());
             //var tr = $(this);
             //var td = tr.children();
-            //window.location.href='/posts/update/'+$('#row td').text();
+            window.location.href='/posts/update/'+$('#row td').text();
         });
     },
     save : function () {
